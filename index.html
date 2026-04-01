@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Month, My Love 🎂</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&family=Pacifico&family=Satisfy&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Page transition overlay -->
+  <div id="transitionOverlay"></div>
+  <!-- Global confetti layer -->
+  <div id="confettiBox"></div>
+
+  <!-- ========== PAGE 1: BIRTHDAY MONTH ========== -->
+  <div id="page1" class="page active">
+    <canvas id="balloonCanvas"></canvas>
+    <!-- Floating GIF canvas (JS-driven) -->
+    <canvas id="gifCanvas1" class="gif-canvas"></canvas>
+
+    <div class="page1-content">
+      <div class="shubhi-name">✨ Shubhi ✨</div>
+      <div class="shubhi-sub">This one's made just for you 🎀</div>
+      <div class="crown-emoji">👑</div>
+      <div class="tag-line">It's officially...</div>
+      <h1 class="bday-title">Your Birthday Month!</h1>
+      <div class="subtitle-month">🌸 April 2026 🌸</div>
+
+      <div class="message-card">
+        <p class="message-text">
+          Hey my love! 🥰 April is not just any month — it's <em>your</em> month,
+          and the entire universe knows it! You are the most beautiful, caring,
+          and radiant soul I have ever known. Your smile lights up every room you
+          walk into, and your laugh is honestly my favourite sound in the world.
+          You deserve every single good thing life has to offer, and this April,
+          I just know it is going to shower you with joy, laughter, and all the
+          magic you truly deserve. Every day leading up to your birthday on the
+          <strong>29th</strong> is going to be just as special as you are —
+          because baby, you are a whole celebration! 🎉✨ Here's to a birthday
+          month filled with love, warmth, and endless happiness just for you. 💖
+        </p>
+      </div>
+
+      <div class="countdown-box">
+        <div class="countdown-label">Days until your big day! 🎂</div>
+        <div class="countdown-numbers" id="countdown"></div>
+      </div>
+
+      <!-- Birthday Candles -->
+      <div class="candle-section">
+        <p class="candle-hint">🕯️ Tap each candle to make a wish!</p>
+        <div class="candles-row">
+          <div class="candle" id="c1" onclick="blowCandle(this,1)">
+            <div class="flame">
+              <div class="flame-core"></div>
+            </div>
+            <div class="wick"></div>
+            <div class="wax wax-pink"></div>
+          </div>
+          <div class="candle" id="c2" onclick="blowCandle(this,2)">
+            <div class="flame">
+              <div class="flame-core"></div>
+            </div>
+            <div class="wick"></div>
+            <div class="wax wax-yellow"></div>
+          </div>
+          <div class="candle" id="c3" onclick="blowCandle(this,3)">
+            <div class="flame">
+              <div class="flame-core"></div>
+            </div>
+            <div class="wick"></div>
+            <div class="wax wax-purple"></div>
+          </div>
+        </div>
+        <div class="wish-text" id="wishText"></div>
+      </div>
+
+      <button class="next-btn" onclick="goToPage(2)" id="nextBtn1">
+        <span>Next</span>
+        <svg viewBox="0 0 24 24">
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+
+    <audio id="audio1" src="Harry Styles - Adore You (Official Video).mp3" loop></audio>
+    <canvas id="eqCanvas1" class="eq-canvas"></canvas>
+    <div id="beatHearts1" class="beat-hearts"></div>
+    <div class="music-bar" id="bar1">
+      <input type="file" id="file1" accept="audio/*" class="file-input" onchange="loadMusic(1, this)" />
+      <button class="bar-pick" onclick="document.getElementById('file1').click()">📂 Choose Song</button>
+      <span class="bar-name" id="name1">No song chosen</span>
+      <button class="bar-play" id="playBtn1" onclick="toggleMusic(1)" disabled>▶</button>
+      <input type="range" id="vol1" class="bar-vol" min="0" max="1" step="0.01" value="0.8"
+        oninput="setVol(1,this.value)" title="Volume" />
+    </div>
+    <button class="music-fab" id="fab1" onclick="toggleBar(1)">🎵</button>
+  </div>
+
+  <!-- ========== PAGE 2: APOLOGY ========== -->
+  <div id="page2" class="page">
+    <div class="rain-container" id="rainContainer"></div>
+    <canvas id="gifCanvas2" class="gif-canvas"></canvas>
+
+    <div class="page2-content">
+      <div class="sorry-icon">💔</div>
+      <h2 class="sorry-title">I'm So Sorry, My Love</h2>
+      <div class="sorry-subtitle">From the bottom of my heart...</div>
+
+      <div class="apology-card">
+        <p class="apology-text">
+          Mam, before anything else, I need to say this —
+          <strong>I am truly, deeply sorry</strong> for how I behaved. There is
+          no excuse good enough for the way I acted, and I know that. You never
+          deserved any of it. Not even for a second. 💧
+        </p>
+        <p class="apology-text">
+          Every moment I hurt you replays in my mind, and my heart aches knowing
+          I was the reason for your pain. You are the most precious person in my
+          life, and instead of treating you like the queen you are, I let you down.
+          That breaks me more than you know.
+        </p>
+        <p class="apology-text">
+          I promise — I am working on myself. I am learning, growing, and trying
+          every single day to be the person you deserve. Your tears should never
+          be because of me, and I will spend every day making sure of that.
+          Please forgive me. I love you more than words can ever say. 🙏💔
+        </p>
+      </div>
+
+      <div class="flower-row">🌹🌹🌹🌹🌹</div>
+
+      <div class="nav-row">
+        <button class="back-btn" onclick="goToPage(1)">
+          <svg viewBox="0 0 24 24">
+            <path d="M19 12H5M12 19l-7-7 7-7" />
+          </svg>
+          <span>Back</span>
+        </button>
+        <button class="next-btn" onclick="goToPage(3)">
+          <span>Next</span>
+          <svg viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <audio id="audio2" src="A Great Big World, Christina Aguilera - Say Something (Lyrics).mp3" loop></audio>
+    <canvas id="eqCanvas2" class="eq-canvas"></canvas>
+    <div id="beatHearts2" class="beat-hearts"></div>
+    <div class="music-bar" id="bar2">
+      <input type="file" id="file2" accept="audio/*" class="file-input" onchange="loadMusic(2, this)" />
+      <button class="bar-pick" onclick="document.getElementById('file2').click()">📂 Choose Song</button>
+      <span class="bar-name" id="name2">No song chosen</span>
+      <button class="bar-play" id="playBtn2" onclick="toggleMusic(2)" disabled>▶</button>
+      <input type="range" id="vol2" class="bar-vol" min="0" max="1" step="0.01" value="0.8"
+        oninput="setVol(2,this.value)" title="Volume" />
+    </div>
+    <button class="music-fab" id="fab2" onclick="toggleBar(2)">🎵</button>
+  </div>
+
+  <!-- ========== PAGE 3: LOVE ========== -->
+  <div id="page3" class="page">
+    <canvas id="heartCanvas"></canvas>
+    <canvas id="gifCanvas3" class="gif-canvas"></canvas>
+
+    <div class="page3-content">
+      <div class="love-sparkle">✨</div>
+      <h2 class="love-title">I Love You</h2>
+      <div class="love-subtitle">More than the universe can hold 💫</div>
+
+      <div class="love-card">
+        <p class="love-text">
+          You are my everything. Not just a word — literally <em>everything</em>.
+          You are my first thought in the morning and the last smile before I sleep.
+          Loving you should be the easiest and most natural thing I have ever done. 💕
+        </p>
+        <p class="love-text">
+          You make ordinary days feel like fairytales. Every laugh we've shared,
+          every late night talk, every hug — they are my most treasured memories.
+          I never knew what "home" truly felt like until I found it in you.
+        </p>
+        <p class="love-text">
+          This birthday month, I want you to know that my love for you grows every
+          single day. You are irreplaceable, undeniable, and undeniably mine — and
+          I am yours, completely. 🌹 Here's to us, to forever, and to loving each
+          other through every season. <strong>Happy Birthday Month, my love!</strong> 🎂💍✨
+        </p>
+      </div>
+
+      <!-- Reasons I Love You flip cards -->
+      <div class="flip-section">
+        <div class="flip-label">💌 Tap to reveal why I love you</div>
+        <div class="flip-grid">
+          <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-inner">
+              <div class="flip-front">💛</div>
+              <div class="flip-back">Your smile is literally my whole world</div>
+            </div>
+          </div>
+          <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-inner">
+              <div class="flip-front">🌸</div>
+              <div class="flip-back">You love me even at my absolute worst</div>
+            </div>
+          </div>
+          <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-inner">
+              <div class="flip-front">💫</div>
+              <div class="flip-back">Your laugh is my favourite sound ever</div>
+            </div>
+          </div>
+          <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-inner">
+              <div class="flip-front">🌹</div>
+              <div class="flip-back">You're the most caring soul I know</div>
+            </div>
+          </div>
+          <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-inner">
+              <div class="flip-front">🏡</div>
+              <div class="flip-back">You are my safe place in this whole world</div>
+            </div>
+          </div>
+          <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-inner">
+              <div class="flip-front">✨</div>
+              <div class="flip-back">You make ordinary days feel like magic</div>
+            </div>
+          </div>
+          <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-inner">
+              <div class="flip-front">🦋</div>
+              <div class="flip-back">You believe in me more than I believe in myself</div>
+            </div>
+          </div>
+          <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-inner">
+              <div class="flip-front">💖</div>
+              <div class="flip-back">You're my home, wherever you are</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hearts-row" id="heartsRow">
+        <span>💖</span><span>💗</span><span>💓</span><span>💞</span><span>💝</span>
+      </div>
+
+      <div class="final-msg">Forever &amp; Always Yours 💌</div>
+
+      <button class="back-btn mt" onclick="goToPage(2)">
+        <svg viewBox="0 0 24 24">
+          <path d="M19 12H5M12 19l-7-7 7-7" />
+        </svg>
+        <span>Back</span>
+      </button>
+    </div>
+
+    <!-- Secret button -->
+    <div class="secret-btn-wrap" id="secretBtnWrap">
+      <button class="secret-btn" id="secretBtn" onclick="revealSurprise()">🔒</button>
+      <span class="secret-label">Don't click here 🙈</span>
+    </div>
+
+    <!-- Surprise popup -->
+    <div class="surprise-overlay" id="surpriseOverlay" onclick="closeSurprise(event)">
+      <div class="surprise-card" id="surpriseCard">
+        <div class="surprise-icon">🎁</div>
+        <div class="surprise-title">🔓 You Unlocked a Secret!</div>
+        <div class="surprise-body">
+          More surprises &amp; gifts are<br>
+          <span class="surprise-highlight">loading in April...</span> 🎀
+        </div>
+        <div class="surprise-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="surprise-sub">Stay tuned, Shubhi 💖</div>
+        <button class="surprise-close" onclick="closeSurprise()">Got it! 🥰</button>
+      </div>
+    </div>
+
+    <audio id="audio3" src="Ed Sheeran - Perfect (Official Music Video).mp3" loop></audio>
+    <canvas id="eqCanvas3" class="eq-canvas"></canvas>
+    <div id="beatHearts3" class="beat-hearts"></div>
+    <div class="music-bar" id="bar3">
+      <input type="file" id="file3" accept="audio/*" class="file-input" onchange="loadMusic(3, this)" />
+      <button class="bar-pick" onclick="document.getElementById('file3').click()">📂 Choose Song</button>
+      <span class="bar-name" id="name3">No song chosen</span>
+      <button class="bar-play" id="playBtn3" onclick="toggleMusic(3)" disabled>▶</button>
+      <input type="range" id="vol3" class="bar-vol" min="0" max="1" step="0.01" value="0.8"
+        oninput="setVol(3,this.value)" title="Volume" />
+    </div>
+    <button class="music-fab" id="fab3" onclick="toggleBar(3)">🎵</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
